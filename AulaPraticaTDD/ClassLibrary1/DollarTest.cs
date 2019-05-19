@@ -11,10 +11,9 @@ namespace ClassLibrary1
         [TestMethod()]
         public void testMultiplication()
         {
-            Dollar five = new Dollar(5);
-            Dollar product = five.times(2);
-            Assert.AreEqual(new Dollar(10), five.times(2));
-            Assert.AreEqual(new Dollar(15), five.times(5));
+            Money five = Money.dollar(5);
+            Assert.AreEqual(Money.dollar(10), five.times(2));
+            Assert.AreEqual(Money.dollar(15), five.times(5));
         }
 
         [TestMethod()]
@@ -22,7 +21,6 @@ namespace ClassLibrary1
         {
             Assert.IsTrue(new Dollar(5) == new Dollar(5));
             Assert.IsFalse(new Dollar(5) == new Dollar(6));
-
         }
     }
 }

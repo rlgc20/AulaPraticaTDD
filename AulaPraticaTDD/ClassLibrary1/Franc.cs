@@ -11,10 +11,9 @@ namespace ClassLibrary1
             this.amount = amount;
         }
 
-        public Franc times(int multiplier)
+        public Money times(int multiplier)
         {
-            amount = amount * multiplier;
-            return new Franc(amount);
+            return new Franc(amount * multiplier);
         }
 
     }

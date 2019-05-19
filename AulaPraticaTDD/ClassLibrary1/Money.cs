@@ -4,13 +4,24 @@ using System.Text;
 
 namespace ClassLibrary1
 {
-    public class Money
+    public abstract class Money
     {
         protected int amount;
         
-        public bool equals(Money money1, Money money2)
+        public bool equals(Object object1)
         {
-            return money1.amount == money2.amount;
+            Money money1 = (Money)object1;
+            return amount == money1.amount && object1.GetType() == typeof(Money);
+        }
+
+        public static Dollar dollar(int amount)
+        {
+            return new Dollar(amount);
+        }
+
+        public static Franc franc(int amount)
+        {
+            return new Franc(amount);
         }
     }
 }

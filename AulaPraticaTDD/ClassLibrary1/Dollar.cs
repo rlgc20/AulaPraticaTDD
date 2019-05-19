@@ -10,10 +10,9 @@ namespace ClassLibrary1
             this.amount = amount;
         }
 
-        public Dollar times(int multiplier)
+        public Money times(int multiplier)
         {
-            amount = amount * multiplier;
-            return new Dollar(amount);
+            return new Dollar(amount * multiplier);
         }
     }
 }

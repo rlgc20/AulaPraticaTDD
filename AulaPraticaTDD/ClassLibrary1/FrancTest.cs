@@ -11,9 +11,9 @@ namespace ClassLibrary1
         [TestMethod()]
         public void testFrancMultiplication()
         {
-            Franc five = new Franc(5);
-            Assert.AreEqual(new Franc(10), five.times(2));
-            Assert.AreEqual(new Franc(15), five.times(5));
+            Money five = Money.franc(5);
+            Assert.AreEqual(Money.franc(10), five.times(2));
+            Assert.AreEqual(Money.franc(15), five.times(5));
         }
     }
 }
