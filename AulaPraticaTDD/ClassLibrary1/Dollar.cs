@@ -2,15 +2,18 @@
 
 namespace ClassLibrary1
 {
-    public class Dollar
+    public class Dollar : Money
     {
-        public int amount = 50;
-        
+       
         public Dollar(int amount)
         {
-
+            this.amount = amount;
         }
 
-        public void times(int multiplier) { }
+        public Dollar times(int multiplier)
+        {
+            amount = amount * multiplier;
+            return new Dollar(amount);
+        }
     }
 }
