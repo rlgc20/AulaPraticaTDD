@@ -4,15 +4,15 @@ namespace ClassLibrary1
 {
     public class Dollar : Money
     {
-       
-        public Dollar(int amount)
+        public Dollar(int amount, string currency)
         {
-            this.amount = amount;
+            return new Money(amount, currency);
         }
 
         public Money times(int multiplier)
         {
-            return new Dollar(amount * multiplier);
+            return Money.dollar(amount * multiplier);
         }
+        
     }
 }

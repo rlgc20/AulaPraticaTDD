@@ -6,14 +6,14 @@ namespace ClassLibrary1
 {
     public class Franc : Money
     {
-        public Franc(int amount)
+        public Franc(int amount, string currency)
         {
-            this.amount = amount;
+            return new Money(amount, currency);
         }
 
         public Money times(int multiplier)
         {
-            return new Franc(amount * multiplier);
+            return Money.franc(amount * multiplier);
         }
 
     }

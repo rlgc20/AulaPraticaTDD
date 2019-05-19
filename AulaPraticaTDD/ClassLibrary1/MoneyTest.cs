@@ -18,5 +18,11 @@ namespace ClassLibrary1
             Assert.AreNotEqual(Money.franc(5), Money.dollar(5));
         }
 
+        [TestMethod()]
+        public void testCurrency()
+        {
+            Assert.AreEqual("USD", Money.dollar(1).currency());
+            Assert.AreEqual("CHF", Money.franc(1).currency());
+        }
     }
 }
