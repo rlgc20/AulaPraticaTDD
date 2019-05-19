@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ClassLibrary1
 {
-    public abstract class Money
+    public class Money
     {
         protected int amount;
         protected string currency;
@@ -12,17 +12,17 @@ namespace ClassLibrary1
         public bool equals(Object object1)
         {
             Money money1 = (Money)object1;
-            return amount == money1.amount && object1.GetType() == typeof(Money);
+            return amount == money1.amount && money1.currency == currency;
         }
 
-        public static Dollar dollar(int amount, string currency)
+        public static Money dollar(int amount)
         {
-            return new Dollar(amount, currency);
+            return new Money(amount, "USD");
         }
 
-        public static Franc franc(int amount, string currency)
+        public static Money franc(int amount)
         {
-            return new Franc(amount, currency);
+            return new Money(amount, "CHF");
         }
 
         public string Currency()
@@ -33,6 +33,11 @@ namespace ClassLibrary1
         {
             this.amount = amount;
             this.currency = currency;
+        }
+
+        public Money times(int multiplier)
+        {
+            return new Money(amount * multiplier, currency);
         }
     }
 }

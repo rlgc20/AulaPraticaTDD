@@ -11,24 +11,18 @@ namespace ClassLibrary1
         [TestMethod()]
         public void testEquality()
         {
-            Assert.IsTrue(Money.dollar(5) == Money.dollar(5));
-            Assert.IsFalse(Money.dollar(5) == Money.dollar(6));
-            Assert.IsTrue(Money.franc(5) == Money.franc(5));
-            Assert.IsFalse(Money.franc(5) == Money.franc(5));
+            Assert.AreEqual(Money.dollar(5), Money.dollar(5));
+            Assert.AreEqual(Money.franc(5), Money.dollar(5));
+            Assert.AreNotEqual(Money.dollar(5), Money.dollar(6));
             Assert.AreNotEqual(Money.franc(5), Money.dollar(5));
         }
 
         [TestMethod()]
         public void testCurrency()
         {
-            Assert.AreEqual("USD", Money.dollar(1).currency());
-            Assert.AreEqual("CHF", Money.franc(1).currency());
+            Assert.AreEqual("USD", Money.dollar(1).Currency());
+            Assert.AreEqual("CHF", Money.franc(1).Currency());
         }
 
-        [TestMethod()]
-        public void testDifferentClassEquality()
-        {
-            Assert.AreEqual(new Money(10, "CHF"), new Franc(10, "CHF"));
-        }
     }
 }
